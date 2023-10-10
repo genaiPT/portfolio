@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Logo = () => {
   const changeLetterColor = () => {
@@ -32,6 +33,3 @@ const Logo = () => {
 };
 
 export default Logo;
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}
