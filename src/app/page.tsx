@@ -88,7 +88,7 @@ export default function Home() {
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
         <main className="flex min-h-screen flex-col items-center justify-between pb-8 ">
-          <section className="bg-slate-400 bg-opacity-25  w-full px-24 pt-8 pb-8 flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
+          <section className="bg-slate-400 bg-opacity-25  w-full px-10 md:px-24 pt-8 pb-8 flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col" id="sobre">
                 <h1 className="text-3xl font-bold mb-1">Ricardo Linhares</h1>
@@ -96,7 +96,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">SOBRE MIM</h3>
-                <div className="flex  flex-col gap-2">
+                <div className="flex  flex-col gap-y-2">
                   <p>
                     Há tempos atrás, entrei na universidade em Ciências da Computação, no segundo ano, uma cadeira
                     opcional de psicologia virou a minha vida noutra direção.
@@ -141,7 +141,7 @@ export default function Home() {
                   ref={refCard1}
                   className={`${
                     persistentViewCard1
-                      ? "opacity-100 ease-in duration-300 translate-x-0 "
+                      ? "opacity-100 ease-in duration-200 translate-x-0 "
                       : "opacity-0 -translate-x-60"
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function Home() {
                   ref={refCard2}
                   className={`${
                     persistentViewCard2
-                      ? "opacity-100 ease-in duration-300 translate-x-0 delay-300 "
+                      ? "opacity-100 ease-in duration-200 translate-x-0 delay-300 "
                       : "opacity-0 translate-x-60"
                   }`}
                 >
