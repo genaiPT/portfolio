@@ -40,10 +40,10 @@ export default function Home() {
   ];
 
   const { ref: refCard1, inView: viewCard1 } = useInView({
-    threshold: 0.4,
+    threshold: 0.3,
   });
   const { ref: refCard2, inView: viewCard2 } = useInView({
-    threshold: 0.4,
+    threshold: 0.3,
   });
   const { ref: refContactos, inView: viewContacts } = useInView({
     threshold: 0.3,

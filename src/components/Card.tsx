@@ -11,7 +11,7 @@ type Props = {
 
 function Card({ imageSrc, title, subtitle, iconArray, openModal, ...rest }: Props) {
   return (
-    <div className=" min-h-300px max-w-xs mx-auto rounded overflow-hidden shadow-lg bg-white" {...rest}>
+    <div className=" min-h-300px max-w-xs mx-auto rounded  shadow-lg bg-white" {...rest}>
       <img
         onClick={openModal}
         src={imageSrc}
