@@ -57,9 +57,9 @@ function Modal({ open, close, title, imageSrc, subtitle, linkApp }: Props) {
             </div>
             <div className="">
               <h2 className="px-5 font-bold pb-3 text-lg hidden md:flex">{title}</h2>
-              <p className="px-5 pb-3" dangerouslySetInnerHTML={{ __html: subtitle }}></p>
+              <p className="px-5 pb-3 pt-3 md:pt-0" dangerouslySetInnerHTML={{ __html: subtitle }}></p>
               <Link
-                className="px-5  underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+                className="px-5 mb-2  underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
                 href={linkApp}
                 target="_blank"
               >
