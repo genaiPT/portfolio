@@ -1,113 +1,197 @@
-import Image from 'next/image'
+"use client";
+import Card from "@/components/Card";
+import Footbar from "@/components/Footbar";
+import Modal from "@/components/Modal";
+import Contact from "@/components/contact/Contact";
+import ExternalLink from "@/components/navigation/ExternalLink";
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { FaReact } from "react-icons/fa";
+import { IconType } from "react-icons";
+import ModalContacts from "@/components/ModalContacts";
 
+export type NameLink = {
+  name: string;
+  icon: string | undefined;
+};
+export type NameLink2 = {
+  name: string;
+  icon: string | undefined;
+  link: string;
+};
 export default function Home() {
+  const techLevelUp: NameLink[] = [
+    { name: "Expo", icon: "/expo.png" },
+    { name: "React Native", icon: "/react.png" },
+    { name: "JavaScript", icon: "/js.png" },
+  ];
+
+  const techPortfolio: NameLink[] = [
+    { name: "Next JS", icon: "/next.svg" },
+    { name: "React JS", icon: "/react.png" },
+    { name: "TypeScript", icon: "/ts.png" },
+    { name: "TailWind", icon: "/tw.png" },
+  ];
+
+  const exLinks: NameLink2[] = [
+    { name: "GitHub", icon: "/github.png", link: "https://github.com/genaiPT" },
+    { name: "LinkedIn", icon: "/li.png", link: "https://www.linkedin.com/in/ricardolinharespsicologo/" },
+  ];
+
+  const { ref: refCard1, inView: viewCard1 } = useInView({
+    threshold: 0.4,
+  });
+  const { ref: refCard2, inView: viewCard2 } = useInView({
+    threshold: 0.4,
+  });
+  const { ref: refContactos, inView: viewContacts } = useInView({
+    threshold: 0.3,
+  });
+  const [persistentViewCard1, setPersistentViewCard1] = useState(false);
+  const [persistentViewCard2, setPersistentViewCard2] = useState(false);
+  const [persistentViewContacts, setPersistentViewContacts] = useState(false);
+
+  useEffect(() => {
+    if (viewCard1) setPersistentViewCard1(true);
+    if (viewCard2) setPersistentViewCard2(true);
+    if (viewContacts) setPersistentViewContacts(true);
+  }, [viewCard1, viewCard2, viewContacts]);
+
+  const [openModal, setOpenModal] = useState(false);
+  const [openModalContacts, setOpenModalContacts] = useState(false);
+
+  const handleModalOpen = useCallback(() => {
+    setOpenModal(true);
+    document.body.classList.add("overflow-hidden");
+  }, []);
+
+  const handleModalClose = useCallback(() => {
+    setOpenModal(false);
+    document.body.classList.remove("overflow-hidden");
+  }, []);
+
+  const handleModalContacts = useCallback(() => {
+    setOpenModalContacts((prev) => !prev);
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Modal
+        open={openModal}
+        close={handleModalClose}
+        imageSrc="/FeatureDesign_pt.png"
+        linkApp={"https://play.google.com/store/apps/details?id=com.rlpsicologia.levelup&hl=en&gl=US"}
+        title="Level-up"
+        subtitle={`O objetivo da app era criar um sistema de promoção de saúde mental, que permitisse rastrear o progresso feito e cativasse os utilizadores. Era também necessário um método de monetização.<br/><br/> A applicação conta com um sistema de Status tipo RPG, titulos de conquistas, inventário de itens adquiridos, registos de gratidão e meditação, entre outras coisas. A app é freemium, utilizando anúncios e uma opção de compra que permir acesso a funcionalidades exclusivas e desativação de anúncios`}
+      />
+      <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
+      <div className="overflow-hidden overflow-x-hidden ">
+        <main className="flex min-h-screen flex-col items-center justify-between pb-8 ">
+          <section className="bg-slate-400 bg-opacity-25  w-full px-24 pt-8 pb-8 flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col" id="sobre">
+                <h1 className="text-3xl font-bold mb-1">Ricardo Linhares</h1>
+                <h3 className="text-xl italic mb-2">Front-end developer e Psicólogo</h3>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4">SOBRE MIM</h3>
+                <div className="flex  flex-col gap-2">
+                  <p>
+                    Há tempos atrás, entrei na universidade em Ciências da Computação, no segundo ano, uma cadeira
+                    opcional de psicologia virou a minha vida noutra direção.
+                  </p>
+                  <p>
+                    Enventualmente, tornei-me Psicólogo Clínico, mas uma ideia de uma aplicação para disponibilizar aos
+                    meus clientes entre sessões e após o final do processo clínico, voltou a virar a Computação na minha
+                    direção.
+                  </p>
+                  <p>
+                    Decidi ser eu mesmo a construir a aplicação; e um bichinho que há uns anos não existia, desta vez
+                    foi diferente - aparentemente gosto de construir coisas!
+                  </p>
+                </div>
+                <div className="mt-8 ">
+                  <Link href={"/"} target="_blank">
+                    <button
+                      className="hover:shadow-sm hover:bg-opacity-90 rounded-md bg-orange-500 py-3 px-8 text-base font-semibold text-white outline-none"
+                      type="button"
+                    >
+                      CV
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <img src="/eu.png" alt="Ricardo Linhares Psicólogo" title="Ricardo Linhares Psicólogo" width="800" />
+            </div>
+          </section>
+          <div id="projectos" className="mb-14"></div>
+          <section className="flex flex-row">
+            <div>
+              <h2 className="text-center mb-8 text-2xl font-bold">PROJECTOS</h2>
+              <div className="flex gap-8 flex-col md:flex-row px-14 md:px-24">
+                <div
+                  ref={refCard1}
+                  className={`${
+                    persistentViewCard1
+                      ? "opacity-100 ease-in duration-300 translate-x-0 "
+                      : "opacity-0 -translate-x-60"
+                  }`}
+                >
+                  <Card
+                    imageSrc="/app.png"
+                    title="Level-up"
+                    subtitle="App android. A funcionalidade principal é completar desafios psicológicos diários, seguir o progresso e ir desbloqueando novo conteúdo."
+                    iconArray={techLevelUp}
+                    openModal={handleModalOpen}
+                  />
+                </div>
+                <div
+                  ref={refCard2}
+                  className={`${
+                    persistentViewCard2
+                      ? "opacity-100 ease-in duration-300 translate-x-0 delay-300 "
+                      : "opacity-0 translate-x-60"
+                  }`}
+                >
+                  <Card
+                    imageSrc="/site.png"
+                    title="Este site"
+                    subtitle="O objetivo foi contruir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender."
+                    iconArray={techPortfolio}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            ref={refContactos}
+            id="contactos"
+            className={`px-14 md:px-24 mt-14 justify-start ${
+              persistentViewContacts ? " opacity-100 ease-in  duration-500" : "opacity-0 "
+            }`}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+            <h2 className={`text-center  mb-8 text-2xl font-bold `}>CONTACTOS</h2>
+            <div className="flex flex-1 flex-col md:flex-row gap-16 md:gap-16 lg:gap-32">
+              <div>
+                <Contact handleModal={handleModalContacts} />
+              </div>
+              {/* link uteis */}
+              <div>
+                <ExternalLink exLinks={exLinks} />
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <Footbar />
+        </footer>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </>
+  );
+}
+function sendEmailToServer(formData: any) {
+  throw new Error("Function not implemented.");
 }
