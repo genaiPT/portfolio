@@ -111,7 +111,7 @@ export default function Home() {
                     foi diferente - aparentemente gosto de construir coisas!
                   </p>
                 </div>
-                <div className="mt-8 ">
+                {/*      <div className="mt-8 ">
                   <Link href={"/"} target="_blank">
                     <button
                       className="hover:shadow-sm hover:bg-opacity-90 rounded-md bg-orange-500 py-3 px-8 text-base font-semibold text-white outline-none"
@@ -120,11 +120,16 @@ export default function Home() {
                       CV
                     </button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="">
-              <img src="/eu.png" alt="Ricardo Linhares Psicólogo" title="Ricardo Linhares Psicólogo" width="800" />
+              <img
+                src="/ricardo-linhares.png"
+                alt="Ricardo Linhares Psicólogo"
+                title="Ricardo Linhares Psicólogo"
+                width="800"
+              />
             </div>
           </section>
           <div id="projectos" className="mb-14"></div>
