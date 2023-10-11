@@ -40,10 +40,10 @@ export default function Home() {
   ];
 
   const { ref: refCard1, inView: viewCard1 } = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
   });
   const { ref: refCard2, inView: viewCard2 } = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
   });
   const { ref: refContactos, inView: viewContacts } = useInView({
     threshold: 0.3,
@@ -141,8 +141,8 @@ export default function Home() {
                   ref={refCard1}
                   className={`${
                     persistentViewCard1
-                      ? "opacity-100 ease-in duration-200 translate-x-0 "
-                      : "opacity-0 -translate-x-60"
+                      ? "opacity-100 ease-in duration-300 translate-x-0 "
+                      : "opacity-0 -translate-x-32 md:-translate-x-60"
                   }`}
                 >
                   <Card
@@ -157,8 +157,8 @@ export default function Home() {
                   ref={refCard2}
                   className={`${
                     persistentViewCard2
-                      ? "opacity-100 ease-in duration-200 translate-x-0 md:delay-300 "
-                      : "opacity-0 translate-x-60"
+                      ? "opacity-100 ease-in duration-300 translate-x-0 md:delay-300 "
+                      : "opacity-0 translate-x-32 md:translate-x-60"
                   }`}
                 >
                   <Card

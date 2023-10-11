@@ -102,7 +102,7 @@ const NavigationBar = ({ link1, link2, link3, link1To, link2To, link3To }: props
 
       <div
         className={`mobile-menu overflow-hidden  transition-transform ease-in-out duration-300  ${
-          dropActive ? "translate-x-0 pb-6 h-auto " : "translate-x-full h-0 p-0 m-0 "
+          dropActive ? "translate-x-0 pb-6 h-auto " : "translate-x-7 h-0 p-0 m-0 "
         } md:hidden flex  flex-col items-end gap-6 px-9  text-sm`}
       >
         <Link className="links text-black" href={link1To}>

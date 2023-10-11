@@ -70,7 +70,7 @@ const Contact: FC<Props> = ({ handleModal }: Props) => {
           type="submit"
           disabled={!nextSubmission}
         >
-          {!nextSubmission ? "a submeter..." : "Submeter"}
+          {!nextSubmission ? "a enviar..." : "Enviar"}
         </button>
       </div>
     </form>
