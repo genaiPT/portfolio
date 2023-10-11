@@ -4,11 +4,8 @@ import Footbar from "@/components/Footbar";
 import Modal from "@/components/Modal";
 import Contact from "@/components/contact/Contact";
 import ExternalLink from "@/components/navigation/ExternalLink";
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { FaReact } from "react-icons/fa";
-import { IconType } from "react-icons";
 import ModalContacts from "@/components/ModalContacts";
 
 export type NameLink = {
@@ -196,7 +193,4 @@ export default function Home() {
       </div>
     </>
   );
-}
-function sendEmailToServer(formData: any) {
-  throw new Error("Function not implemented.");
 }
