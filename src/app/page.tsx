@@ -161,7 +161,7 @@ export default function Home() {
                   <Card
                     imageSrc="/site.png"
                     title="Este site"
-                    subtitle="O objetivo foi contruir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender."
+                    subtitle="O objetivo foi construir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender."
                     iconArray={techPortfolio}
                   />
                 </div>
