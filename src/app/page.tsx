@@ -7,6 +7,7 @@ import ExternalLink from "@/components/navigation/ExternalLink";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ModalContacts from "@/components/ModalContacts";
+import { useScroll } from "@/context/ScrollContext";
 
 export type NameLink = {
   name: string;
@@ -72,6 +73,10 @@ export default function Home() {
     setOpenModalContacts((prev) => !prev);
   }, []);
 
+  const { sectionRefs } = useScroll();
+
+  const { contactos, projectos, sobreMim } = sectionRefs;
+  console.log("index", contactos);
   return (
     <>
       <Modal
@@ -87,7 +92,7 @@ export default function Home() {
         <main className="flex min-h-screen flex-col items-center justify-between pb-8 ">
           <section className="bg-slate-400 bg-opacity-25  w-full px-10 md:px-24 pt-8 pb-8 flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
             <div className="flex flex-col gap-6">
-              <div className="flex flex-col" id="sobre">
+              <div ref={sobreMim} className="flex flex-col" id="sobre">
                 <h1 className="text-3xl font-bold mb-1">Ricardo Linhares</h1>
                 <h3 className="text-xl italic mb-2">Front-end developer e Psicólogo</h3>
               </div>
@@ -130,7 +135,7 @@ export default function Home() {
             </div>
           </section>
           <div id="projectos" className="mb-14"></div>
-          <section className="flex flex-row">
+          <section ref={projectos} className="flex flex-row">
             <div>
               <h2 className="text-center mb-8 text-2xl font-bold">PROJECTOS</h2>
               <div className="flex gap-8 flex-col md:flex-row px-14 md:px-24">
@@ -175,7 +180,9 @@ export default function Home() {
               persistentViewContacts ? " opacity-100 ease-in  duration-500" : "opacity-0 "
             }`}
           >
-            <h2 className={`text-center  mb-8 text-2xl font-bold `}>CONTACTOS</h2>
+            <h2 ref={contactos} className={`text-center  mb-8 text-2xl font-bold `}>
+              CONTACTOS
+            </h2>
             <div className="flex flex-1 flex-col md:flex-row gap-16 md:gap-16 lg:gap-32">
               <div>
                 <Contact handleModal={handleModalContacts} />

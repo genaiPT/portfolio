@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Logo from "./Logo";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { SectionRefsTypes, useScroll } from "@/context/ScrollContext";
 
 type props = {
   link1: string;
@@ -50,20 +51,27 @@ const NavigationBar = ({ link1, link2, link3, link1To, link2To, link3To }: props
     window.addEventListener("scroll", changeBackground);
   }, []);
 
+  const { scrollToSection } = useScroll();
+
+  const dropDownScrollToSectio = (section: keyof SectionRefsTypes) => {
+    scrollToSection(section);
+    setDropActive((prev) => !prev);
+  };
+
   return (
     <div className="navBar z-10 sticky top-0 py-1 flex flex-col items-between bg-slate-400 bg-opacity-25   px-8 mx-auto text-slate-200">
       <nav className=" flex items-center justify-between  ">
         <Logo />
         <div className="hidden md:flex items-center space-x-9">
-          <Link className="links text-black" href={link1To}>
+          <button className="links text-black" onClick={() => scrollToSection("sobreMim")}>
             {link1}
-          </Link>
-          <Link className="links text-black" href={link2To}>
+          </button>
+          <button className="links text-black" onClick={() => scrollToSection("projectos")}>
             {link2}
-          </Link>
-          <Link className="links text-black" href={link3To}>
+          </button>
+          <button className="links text-black" onClick={() => scrollToSection("contactos")}>
             {link3}
-          </Link>
+          </button>
         </div>
         <button
           onClick={() => {
@@ -105,15 +113,15 @@ const NavigationBar = ({ link1, link2, link3, link1To, link2To, link3To }: props
           dropActive ? "translate-x-0 pb-6 h-auto " : "translate-x-7 h-0 p-0 m-0 "
         } md:hidden flex  flex-col items-end gap-6 px-9  text-sm`}
       >
-        <Link className="links text-black" href={link1To}>
+        <button className="links text-black" onClick={() => dropDownScrollToSectio("sobreMim")}>
           {link1}
-        </Link>
-        <Link className="links text-black" href={link2To}>
+        </button>
+        <button className="links text-black" onClick={() => dropDownScrollToSectio("projectos")}>
           {link2}
-        </Link>
-        <Link className="links text-black" href={link3To}>
+        </button>
+        <button className="links text-black" onClick={() => dropDownScrollToSectio("contactos")}>
           {link3}
-        </Link>
+        </button>
       </div>
     </div>
   );
