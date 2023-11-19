@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavigationBar from "@/components/navigation/navi/NavigationBar";
 import { ScrollProvider } from "@/context/ScrollContext";
+import text from "@/data/text.json"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,16 +14,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const language = "en"
   return (
     <html lang="en">
       <body className={inter.className}>
         <ScrollProvider>
           <NavigationBar
-            link1="Sobre Mim"
+            link1={text[language].nav.sobre}
             link1To="/"
-            link2="Projectos"
+            link2={text[language].nav.projectos}
             link2To="#projectos"
-            link3="Contactos"
+            link3={text[language].nav.contactos}
             link3To="#contactos"
           />
           {children}

@@ -8,6 +8,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ModalContacts from "@/components/ModalContacts";
 import { useScroll } from "@/context/ScrollContext";
+import text from "@/data/text.json"
+
+export const language = "en"
 
 export type NameLink = {
   name: string;
@@ -94,23 +97,19 @@ export default function Home() {
             <div className="flex flex-col gap-6">
               <div ref={sobreMim} className="flex flex-col" id="sobre">
                 <h1 className="text-3xl font-bold mb-1">Ricardo Linhares</h1>
-                <h3 className="text-xl italic mb-2">Front-end developer e Psicólogo</h3>
+                <h3 className="text-xl italic mb-2">{text[language].title}</h3>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">SOBRE MIM</h3>
+                <h3 className="text-2xl font-bold mb-4">{text[language].nav.sobre.toUpperCase()}</h3>
                 <div className="flex  flex-col gap-y-2">
                   <p>
-                    Há tempos atrás, entrei na universidade em Ciências da Computação, no segundo ano, uma cadeira
-                    opcional de psicologia virou a minha vida noutra direção.
+                    {text[language].p1}
                   </p>
                   <p>
-                    Enventualmente, tornei-me Psicólogo Clínico, mas uma ideia de uma aplicação para disponibilizar aos
-                    meus clientes entre sessões e após o final do processo clínico, voltou a virar a Computação na minha
-                    direção.
+                  {text[language].p2}
                   </p>
                   <p>
-                    Decidi ser eu mesmo a construir a aplicação; e um bichinho que há uns anos não existia, desta vez
-                    foi diferente - aparentemente gosto de construir coisas!
+                  {text[language].p3}
                   </p>
                 </div>
                 {/*      <div className="mt-8 ">
@@ -137,7 +136,7 @@ export default function Home() {
           <div id="projectos" className="mb-14"></div>
           <section ref={projectos} className="flex flex-row">
             <div>
-              <h2 className="text-center mb-8 text-2xl font-bold">PROJECTOS</h2>
+              <h2 className="text-center mb-8 text-2xl font-bold"> {text[language].nav.projectos.toUpperCase()}</h2>
               <div className="flex gap-8 flex-col md:flex-row px-14 md:px-24">
                 <div
                   ref={refCard1}
@@ -150,7 +149,7 @@ export default function Home() {
                   <Card
                     imageSrc="/app.png"
                     title="Level-up"
-                    subtitle="App android. A funcionalidade principal é completar desafios psicológicos diários, seguir o progresso e ir desbloqueando novo conteúdo."
+                    subtitle= {text[language].card1sub}
                     iconArray={techLevelUp}
                     openModal={handleModalOpen}
                   />
@@ -165,8 +164,8 @@ export default function Home() {
                 >
                   <Card
                     imageSrc="/site.png"
-                    title="Este site"
-                    subtitle="O objetivo foi construir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender."
+                    title={text[language].card2title}
+                    subtitle= {text[language].card2sub}
                     iconArray={techPortfolio}
                   />
                 </div>
@@ -181,7 +180,7 @@ export default function Home() {
             }`}
           >
             <h2 ref={contactos} className={`text-center  mb-8 text-2xl font-bold `}>
-              CONTACTOS
+            {text[language].nav.contactos.toUpperCase()}
             </h2>
             <div className="flex flex-1 flex-col md:flex-row gap-16 md:gap-16 lg:gap-32">
               <div>

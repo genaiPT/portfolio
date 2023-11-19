@@ -3,6 +3,9 @@
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { sendEmail } from "@/utils/sendEmail";
+import text from "@/data/text.json"
+
+const language = "en"
 
 export type FormData = {
   name: string;
@@ -32,11 +35,11 @@ const Contact: FC<Props> = ({ handleModal }: Props) => {
       <div className="flex flex-col md:flex-row gap-4">
         <div className="mb-5 ">
           <label htmlFor="name" className="mb-3 block text-base font-medium text-black">
-            Nome
+            {text[language].c.nome}
           </label>
           <input
             type="text"
-            placeholder="O seu nome"
+            placeholder= {text[language].c.nomeplace}
             className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
             {...register("name", { required: true })}
           />
@@ -47,7 +50,7 @@ const Contact: FC<Props> = ({ handleModal }: Props) => {
           </label>
           <input
             type="email"
-            placeholder="exemplo@dominio.com"
+            placeholder={text[language].c.mailplace}
             className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
             {...register("email", { required: true })}
           />
@@ -55,11 +58,11 @@ const Contact: FC<Props> = ({ handleModal }: Props) => {
       </div>
       <div className="mb-5">
         <label htmlFor="message" className="mb-3 block text-base font-medium text-black">
-          Mensagem
+        {text[language].c.mensagem}
         </label>
         <textarea
           rows={4}
-          placeholder={`Escreva a sua mensagem`}
+          placeholder= {text[language].c.menplace}
           className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
           {...register("message", { required: true })}
         ></textarea>
@@ -70,7 +73,7 @@ const Contact: FC<Props> = ({ handleModal }: Props) => {
           type="submit"
           disabled={!nextSubmission}
         >
-          {!nextSubmission ? "a enviar..." : "Enviar"}
+          {!nextSubmission ?  text[language].c.sending :  text[language].c.send}
         </button>
       </div>
     </form>
