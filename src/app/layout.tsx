@@ -8,15 +8,13 @@ import { language } from "@/utils/language";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const metadata: Metadata = {
-  title: "Ricardo Linhares Front-end Developer",
-  description: "Página pessoal de portfólio para os trabalhos de programação.",
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const language = "en";
   return (
     <html lang="en">
+      <head>
+        <title>Ricardo Linhares Front-end Developer</title>
+        <meta name="description" content="Personal portfolio website for showcasing development work." />
+      </head>
       <body className={inter.className}>
         <ScrollProvider>
           <NavigationBar
