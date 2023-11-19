@@ -1,6 +1,6 @@
 import React from "react";
-import text from "@/data/text.json"
-import { language } from "@/app/page";
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
 
 type Props = {};
 

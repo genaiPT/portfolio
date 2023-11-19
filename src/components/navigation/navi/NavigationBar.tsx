@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import Logo from "./Logo";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SectionRefsTypes, useScroll } from "@/context/ScrollContext";
 
 type props = {

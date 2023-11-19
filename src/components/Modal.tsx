@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
 
 type Props = {
   open: boolean;
@@ -62,7 +63,7 @@ function Modal({ open, close, title, imageSrc, subtitle, linkApp }: Props) {
                 href={linkApp}
                 target="_blank"
               >
-                Ver no GooglePlay
+                {text[language].modalLink}
               </Link>
             </div>
           </div>

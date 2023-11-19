@@ -3,18 +3,18 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavigationBar from "@/components/navigation/navi/NavigationBar";
 import { ScrollProvider } from "@/context/ScrollContext";
-import text from "@/data/text.json"
-
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Ricardo Linhares Front-end Developer",
   description: "Página pessoal de portfólio para os trabalhos de programação.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const language = "en"
+  const language = "en";
   return (
     <html lang="en">
       <body className={inter.className}>

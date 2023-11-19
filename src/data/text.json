@@ -1,57 +1,56 @@
 {
-    "pt": {
-        "title" : "Front-end Developer e Psicólogo",
-      "p1": "Há tempos atrás, entrei na universidade em Ciências da Computação, no segundo ano, uma cadeira opcional de psicologia virou a minha vida noutra direção.",
-      "p2": "Enventualmente, tornei-me Psicólogo Clínico, mas uma ideia de uma aplicação para disponibilizar aos meus clientes entre sessões e após o final do processo clínico, voltou a virar a Computação na minha direção.",
-      "p3": "Decidi ser eu mesmo a construir a aplicação; e um bichinho que há uns anos não existia, desta vez foi diferente - aparentemente gosto de construir coisas!",
-      "card1sub": "App android. A funcionalidade principal é completar desafios psicológicos diários, seguir o progresso e ir desbloqueando novo conteúdo.",
-      "card2title" : "Este site",
-      "card2sub": "O objetivo foi construir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender.",
-      "footer": "Desenvolvido por Ricardo Linhares - 2023",
-      "modal": "O objetivo da app era criar um sistema de promoção de saúde mental, que permitisse rastrear o progresso feito e cativasse os utilizadores. Era também necessário um método de monetização.<br/><br/> A applicação conta com um sistema de Status tipo RPG, títulos de conquistas, inventário de itens adquiridos, registos de gratidão e meditação, entre outras coisas. A app é freemium, utilizando anúncios e uma opção de compra que permite acesso a funcionalidades exclusivas e desativação de anúncios",
-      "nav": {
-        "sobre": "Sobre mim",
-        "projectos": "Projectos",
-        "contactos": "contactos"
-      },
-      "c" : {
-        "nome" : "Nome",
-        "nomeplace" : "O seu nome",
-        "mensagem" : "Mensagem",
-        "menplace" : "Escreva a sua mensagem",
-        "send" : "Enviar",
-        "sending" : "a enviar...",
-        "mailplace" : "exemple@domain.com"
-      
-
-      }
+  "pt": {
+    "title": "Front-end Developer e Psicólogo",
+    "p1": "Há tempos atrás, entrei na universidade em Ciências da Computação, no segundo ano, uma cadeira opcional de psicologia virou a minha vida noutra direção.",
+    "p2": "Enventualmente, tornei-me Psicólogo Clínico, mas uma ideia de uma aplicação para disponibilizar aos meus clientes entre sessões e após o final do processo clínico, voltou a virar a Computação na minha direção.",
+    "p3": "Decidi ser eu mesmo a construir a aplicação; e um bichinho que há uns anos não existia, desta vez foi diferente - aparentemente gosto de construir coisas!",
+    "card1sub": "App android. A funcionalidade principal é completar desafios psicológicos diários, seguir o progresso e ir desbloqueando novo conteúdo.",
+    "card2title": "Este site",
+    "card2sub": "O objetivo foi construir algo rápido para funcionar como portfólio e aproveitar para usar outras tecnologias que tenho vindo a aprender.",
+    "footer": "Desenvolvido por Ricardo Linhares - 2023",
+    "modal": "O objetivo da app era criar um sistema de promoção de saúde mental, que permitisse rastrear o progresso feito e cativasse os utilizadores. Era também necessário um método de monetização.<br/><br/> A applicação conta com um sistema de Status tipo RPG, títulos de conquistas, inventário de itens adquiridos, registos de gratidão e meditação, entre outras coisas. A app é freemium, utilizando anúncios e uma opção de compra que permite acesso a funcionalidades exclusivas e desativação de anúncios",
+    "modalLink": "Ver no GooglePlay",
+    "nav": {
+      "sobre": "Sobre mim",
+      "projectos": "Projectos",
+      "contactos": "contactos"
     },
-    "en": {
-        "title" : "Front-end Developer and Psychologist", 
-        "p1": "Some time ago, I entered the university to study Computer Science. In the second year, an optional psychology course turned my life in another direction.",
-        "p2": "Eventually, I became a Clinical Psychologist, but an idea for an application to provide to my clients between sessions and after the end of the clinical process turned Computing back in my direction.",
-        "p3": "I decided to build the application myself, and a bug that didn't exist a few years ago was different this time - apparently, I like to build things!",
-        "card1sub": "Android app. The main functionality is to complete daily psychological challenges, track progress, and unlock new content.",
-        "card2title" : "This site",
-        "card2sub": "The goal was to build something quickly to serve as a portfolio and to use other technologies I have been learning.",
-        "footer": "Developed by Ricardo Linhares - 2023",
-        "modal": "The goal of the app was to create a mental health promotion system that allows tracking progress and engages users. A monetization method was also needed.<br/><br/> The application features an RPG-style Status system, achievement titles, inventory of acquired items, gratitude and meditation records, among other things. The app is freemium, using ads and a purchase option that provides access to exclusive features and ad removal.",
-        "nav": {
-          "sobre": "About me",
-          "projectos": "Projects",
-          "contactos": "Contacts"
-        },
-        "c" : {
-          "nome" : "Name",
-          "nomeplace" : "Your name",
-          "mensagem" : "Message",
-          "menplace" : "Write your Message",
-          "send" : "Send",
-          "sending" : "sending...",
-          "mailplace" : "exemple@domain.com"
-        
-  
-        }
-      }
+    "c": {
+      "nome": "Nome",
+      "nomeplace": "O seu nome",
+      "mensagem": "Mensagem",
+      "menplace": "Escreva a sua mensagem",
+      "send": "Enviar",
+      "sending": "a enviar...",
+      "mailplace": "exemplo@dominio.com",
+      "feedback": "Mensagem enviada com sucesso"
+    }
+  },
+  "en": {
+    "title": "Front-end Developer and Psychologist",
+    "p1": "A while back I went to college to study Computer Science. In my second year there, a psychology course turned my life in another direction.",
+    "p2": "Eventually, I became a Clinical Psychologist. However, an idea for an app to provide to my clients between sessions and after the end of the clinical process, turned computing back in my direction.",
+    "p3": "I decided to build the application myself, and a little bug that didn't exist in me a few years ago it is here now - apparently I like to build things!",
+    "card1sub": "Android app. The main functionality is to complete daily psychological challenges, track progress, and unlock new content.",
+    "card2title": "This site",
+    "card2sub": "The goal was to build something quickly to serve as a portfolio and to use other technologies I have been learning.",
+    "footer": "Developed by Ricardo Linhares - 2023",
+    "modal": "The goal of this app was to create a mental health improvement system that would track progress and engage users. A monetization method was also needed.<br/><br/> The application features an RPG-style Status system, achievement titles, inventory of acquired items, gratitude and meditation records, among other things. The app is freemium, using ads and a purchase option that provides access to exclusive features and ad removal.",
+    "modalLink": "See it on GooglePlay",
+    "nav": {
+      "sobre": "About me",
+      "projectos": "Projects",
+      "contactos": "Contacts"
+    },
+    "c": {
+      "nome": "Name",
+      "nomeplace": "Your name",
+      "mensagem": "Message",
+      "menplace": "Write your Message",
+      "send": "Send",
+      "sending": "sending...",
+      "mailplace": "example@domain.com",
+      "feedback": "Message successfully sent"
+    }
   }
-  
+}

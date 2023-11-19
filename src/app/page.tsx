@@ -8,9 +8,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ModalContacts from "@/components/ModalContacts";
 import { useScroll } from "@/context/ScrollContext";
-import text from "@/data/text.json"
-
-export const language = "en"
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
 
 export type NameLink = {
   name: string;
@@ -37,7 +36,7 @@ export default function Home() {
 
   const exLinks: NameLink2[] = [
     { name: "GitHub", icon: "/github.png", link: "https://github.com/genaiPT" },
-    { name: "LinkedIn", icon: "/li.png", link: "https://www.linkedin.com/in/ricardolinharespsicologo/" },
+    { name: "LinkedIn", icon: "/li.png", link: "https://www.linkedin.com/in/ricardolinharespsicologo/?locale=en_US" },
   ];
 
   const { ref: refCard1, inView: viewCard1 } = useInView({
@@ -88,7 +87,7 @@ export default function Home() {
         imageSrc="/FeatureDesign_pt.png"
         linkApp={"https://play.google.com/store/apps/details?id=com.rlpsicologia.levelup&hl=en&gl=US"}
         title="Level-up"
-        subtitle={`O objetivo da app era criar um sistema de promoção de saúde mental, que permitisse rastrear o progresso feito e cativasse os utilizadores. Era também necessário um método de monetização.<br/><br/> A applicação conta com um sistema de Status tipo RPG, titulos de conquistas, inventário de itens adquiridos, registos de gratidão e meditação, entre outras coisas. A app é freemium, utilizando anúncios e uma opção de compra que permir acesso a funcionalidades exclusivas e desativação de anúncios`}
+        subtitle={text[language].modal}
       />
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
@@ -102,15 +101,9 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">{text[language].nav.sobre.toUpperCase()}</h3>
                 <div className="flex  flex-col gap-y-2">
-                  <p>
-                    {text[language].p1}
-                  </p>
-                  <p>
-                  {text[language].p2}
-                  </p>
-                  <p>
-                  {text[language].p3}
-                  </p>
+                  <p>{text[language].p1}</p>
+                  <p>{text[language].p2}</p>
+                  <p>{text[language].p3}</p>
                 </div>
                 {/*      <div className="mt-8 ">
                   <Link href={"/"} target="_blank">
@@ -149,7 +142,7 @@ export default function Home() {
                   <Card
                     imageSrc="/app.png"
                     title="Level-up"
-                    subtitle= {text[language].card1sub}
+                    subtitle={text[language].card1sub}
                     iconArray={techLevelUp}
                     openModal={handleModalOpen}
                   />
@@ -165,7 +158,7 @@ export default function Home() {
                   <Card
                     imageSrc="/site.png"
                     title={text[language].card2title}
-                    subtitle= {text[language].card2sub}
+                    subtitle={text[language].card2sub}
                     iconArray={techPortfolio}
                   />
                 </div>
@@ -180,7 +173,7 @@ export default function Home() {
             }`}
           >
             <h2 ref={contactos} className={`text-center  mb-8 text-2xl font-bold `}>
-            {text[language].nav.contactos.toUpperCase()}
+              {text[language].nav.contactos.toUpperCase()}
             </h2>
             <div className="flex flex-1 flex-col md:flex-row gap-16 md:gap-16 lg:gap-32">
               <div>

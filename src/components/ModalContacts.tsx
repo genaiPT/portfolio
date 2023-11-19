@@ -1,4 +1,6 @@
 import React from "react";
+import text from "@/data/text.json";
+import { language } from "@/utils/language";
 
 type Props = {
   open: boolean;
@@ -33,7 +35,7 @@ function ModalContacts({ handleModal, open }: Props) {
               </button>
             </div>
             <div className="mb-6 mt-2">
-              <h2 className="px-5 font-bold  text-md">Mensagem enviada com sucesso</h2>
+              <h2 className="px-5 font-bold  text-md">{text[language].c.feedback}</h2>
             </div>
           </div>
         </div>
