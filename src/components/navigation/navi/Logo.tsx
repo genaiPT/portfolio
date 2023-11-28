@@ -25,7 +25,7 @@ const Logo = () => {
         src="logo.png"
         alt="Ricardo Linhares Apps & Psicologia"
         title="Ricardo Linhares"
-        className="inline-block  w-24 mr-4 "
+        className="inline-block  w-8 my-1 mr-4 "
       />
       <p className="title hidden  sm:flex text-slate-800 font-medium">Ricardo Linhares</p>
     </Link>

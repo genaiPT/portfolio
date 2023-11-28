@@ -92,29 +92,19 @@ export default function Home() {
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
         <main className="flex min-h-screen flex-col items-center justify-between pb-8 ">
-          <section className="bg-slate-400 bg-opacity-25  w-full px-10 md:px-24 pt-8 pb-8 flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
-            <div className="flex flex-col gap-6">
+          <section className="bg-slate-400 bg-opacity-25  w-full px-12 md:px-28 pt-8  flex flex-col md:flex-row gap-8 lg:gap-32 justify-center items-center  ">
+            <div className="flex flex-col gap-6 ">
               <div ref={sobreMim} className="flex flex-col" id="sobre">
                 <h1 className="text-3xl font-bold mb-1">Ricardo Linhares</h1>
-                <h3 className="text-xl italic mb-2">{text[language].title}</h3>
+                <h3 className="text-xl italic mb-10">{text[language].title}</h3>
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">{text[language].nav.sobre.toUpperCase()}</h3>
                 <div className="flex  flex-col gap-y-2">
                   <p>{text[language].p1}</p>
                   <p>{text[language].p2}</p>
-                  <p>{text[language].p3}</p>
+                  {/*  <p>{text[language].p3 }</p> */}
                 </div>
-                {/*      <div className="mt-8 ">
-                  <Link href={"/"} target="_blank">
-                    <button
-                      className="hover:shadow-sm hover:bg-opacity-90 rounded-md bg-orange-500 py-3 px-8 text-base font-semibold text-white outline-none"
-                      type="button"
-                    >
-                      CV
-                    </button>
-                  </Link>
-                </div> */}
               </div>
             </div>
             <div className="">

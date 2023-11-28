@@ -28,9 +28,8 @@
   },
   "en": {
     "title": "Front-end Developer and Psychologist",
-    "p1": "A while back I went to college to study Computer Science. In my second year there, a psychology course turned my life in another direction.",
-    "p2": "Eventually, I became a Clinical Psychologist. However, an idea for an app to provide to my clients between sessions and after the end of the clinical process, turned computing back in my direction.",
-    "p3": "I decided to build the application myself, and a little bug that didn't exist in me a few years ago it is here now - apparently I like to build things!",
+    "p1": "With a background in Computer Science and Psychology, I am dedicated to creating experiences and solutions that resonate with users.",
+    "p2": "I'm invested in exploring the conection of psych and tech.",
     "card1sub": "Android app. The main functionality is to complete daily psychological challenges, track progress, and unlock new content.",
     "card2title": "This site",
     "card2sub": "The goal was to quickly build something to serve as a portfolio and to use other technologies I have been learning.",
