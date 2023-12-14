@@ -9,9 +9,10 @@ type Props = {
   title: string;
   subtitle: string;
   linkApp: string;
+  linktext: string;
 };
 
-function Modal({ open, close, title, imageSrc, subtitle, linkApp }: Props) {
+function Modal({ open, close, title, imageSrc, subtitle, linkApp, linktext }: Props) {
   if (!open) return null;
 
   return (
@@ -63,7 +64,7 @@ function Modal({ open, close, title, imageSrc, subtitle, linkApp }: Props) {
                 href={linkApp}
                 target="_blank"
               >
-                {text[language].modalLink}
+              {linktext}
               </Link>
             </div>
           </div>

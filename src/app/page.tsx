@@ -33,6 +33,15 @@ export default function Home() {
     { name: "TypeScript", icon: "/ts.png" },
     { name: "TailWind", icon: "/tw.png" },
   ];
+  const personalDrive: NameLink[] = [
+    { name: "Raspberry Pi", icon: "/next.svg" },
+    { name: "Node JS", icon: "/next.svg" },
+    { name: "Express", icon: "/react.png" },
+    { name: "Vite", icon: "/react.png" },
+    { name: "React JS", icon: "/react.png" },
+    { name: "TypeScript", icon: "/ts.png" },
+    { name: "TailWind", icon: "/tw.png" },
+  ];
 
   const exLinks: NameLink2[] = [
     { name: "GitHub", icon: "/github.png", link: "https://github.com/genaiPT" },
@@ -59,6 +68,7 @@ export default function Home() {
   }, [viewCard1, viewCard2, viewContacts]);
 
   const [openModal, setOpenModal] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
   const [openModalContacts, setOpenModalContacts] = useState(false);
 
   const handleModalOpen = useCallback(() => {
@@ -68,6 +78,16 @@ export default function Home() {
 
   const handleModalClose = useCallback(() => {
     setOpenModal(false);
+    document.body.classList.remove("overflow-hidden");
+  }, []);
+
+  const handleModalOpen2 = useCallback(() => {
+    setOpenModal2(true);
+    document.body.classList.add("overflow-hidden");
+  }, []);
+
+  const handleModalClose2 = useCallback(() => {
+    setOpenModal2(false);
     document.body.classList.remove("overflow-hidden");
   }, []);
 
@@ -88,6 +108,16 @@ export default function Home() {
         linkApp={"https://play.google.com/store/apps/details?id=com.rlpsicologia.levelup&hl=en&gl=US"}
         title="Level-up"
         subtitle={text[language].modal}
+        linktext={text[language].modalLink} 
+      />
+          <Modal
+        open={openModal2}
+        close={handleModalClose2}
+        imageSrc="/FeatureDesign_pt.png"
+        linkApp={"https://personal-drive-amber.vercel.app/"}
+        title="Personal Drive"
+        subtitle={text[language].modal2}
+        linktext={text[language].modal2Link} 
       />
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
@@ -145,11 +175,18 @@ export default function Home() {
                       : "opacity-0 translate-x-32 md:translate-x-60"
                   }`}
                 >
-                  <Card
+{/*                   <Card
                     imageSrc="/site.png"
                     title={text[language].card2title}
                     subtitle={text[language].card2sub}
                     iconArray={techPortfolio}
+                  /> */}
+                     <Card
+                    imageSrc="/personalDrive.png"
+                    title={text[language].card3title}
+                    subtitle={text[language].card3sub}
+                    iconArray={personalDrive}
+                    openModal={handleModalOpen2}
                   />
                 </div>
               </div>
