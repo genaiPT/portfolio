@@ -34,13 +34,14 @@ export default function Home() {
     { name: "TailWind", icon: "/tw.png" },
   ];
   const personalDrive: NameLink[] = [
-    { name: "Raspberry Pi", icon: "/next.svg" },
-    { name: "Node JS", icon: "/next.svg" },
-    { name: "Express", icon: "/react.png" },
-    { name: "Vite", icon: "/react.png" },
+
+    { name: "Node JS", icon: "/nodejs.png" },
+    { name: "Express", icon: "/express.png" },
+ 
     { name: "React JS", icon: "/react.png" },
-    { name: "TypeScript", icon: "/ts.png" },
+
     { name: "TailWind", icon: "/tw.png" },
+    { name: "TypeScript", icon: "/ts.png" },
   ];
 
   const exLinks: NameLink2[] = [
@@ -113,7 +114,7 @@ export default function Home() {
           <Modal
         open={openModal2}
         close={handleModalClose2}
-        imageSrc="/FeatureDesign_pt.png"
+        imageSrc="/personaldriveScreen.png"
         linkApp={"https://personal-drive-amber.vercel.app/"}
         title="Personal Drive"
         subtitle={text[language].modal2}

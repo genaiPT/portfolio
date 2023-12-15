@@ -29,17 +29,17 @@
   "en": {
     "title": "Developer and Psychologist",
     "p1": "With a background in Computer Science and Psychology, I am dedicated to creating experiences and solutions that resonate with users.",
-    "p2": "I'm invested in improving mental health with tech.",
+    "p2": "I'm committed in improving mental health with tech. I also draw on my free time.",
     "card1sub": "Android app. The main functionality is to complete daily psychological challenges, track progress, and unlock new content.",
     "card2title": "This site",
     "card2sub": "The goal was to quickly build something to serve as a portfolio and to use other technologies I have been learning.",
     "card3title": "A personal drive app",
-    "card3sub": "A home web server similar to Google Drive. A easier and quicker way to acess personal files and share them between my family.",
+    "card3sub": "A home web server similar to Google Drive. A easier and quicker way to acess personal files and share them with others.",
     "footer": "Developed by Ricardo Linhares - 2023",
     "modal": "The goal of this app was to create a mental health improvement system that would track progress and engage users. A monetization method was also needed.<br/><br/> The application features an RPG-style Status system, achievement titles, inventory of acquired items, gratitude and meditation records, among other things. The app is freemium, using ads and a purchase option that provides access to exclusive features and ad removal.",
 
     "modalLink": "See it on GooglePlay",
-    "modal2": "I made this app for personal use. I needed a way to acess my files in other intitutions computers without login in to google.<br/>This app backend runs on a raspberry pi with node and express, and uses react with vite on the front. I ended up making acounts for my family to use as well, and a shared folder to make files available to all of us. You can acess it with the credentials 'loginGuest' and 'passwordGuest', although guests can't upload files.",
+    "modal2": "I made this app for personal use. I needed a way to acess my files in other institutions computers without login in to google.<br/>This app backend runs on a raspberry pi with node and express, and uses react with vite on the front. I ended up making acounts for my family to use as well, and a shared folder to make files available to all of us. You can acess it with the credentials 'loginGuest' and 'passwordGuest', although guests can't upload files.",
     "modal2Link":"Go to website",
     "nav": {
       "sobre": "About me",
