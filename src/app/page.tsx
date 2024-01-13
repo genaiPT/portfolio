@@ -34,20 +34,16 @@ export default function Home() {
     { name: "TailWind", icon: "/tw.png" },
   ];
   const personalDrive: NameLink[] = [
-
     { name: "Node JS", icon: "/nodejs.png" },
     { name: "Express", icon: "/express.png" },
- 
+
     { name: "React JS", icon: "/react.png" },
 
     { name: "TailWind", icon: "/tw.png" },
     { name: "TypeScript", icon: "/ts.png" },
   ];
 
-  const techFrenteJS: NameLink[] = [
-
-    { name: "TypeScript", icon: "/ts.png" },
-  ];
+  const techFrenteJS: NameLink[] = [{ name: "TypeScript", icon: "/ts.png" }];
 
   const exLinks: NameLink2[] = [
     { name: "GitHub", icon: "/github.png", link: "https://github.com/genaiPT" },
@@ -76,7 +72,7 @@ export default function Home() {
     if (viewCard2) setPersistentViewCard2(true);
     if (viewCard3) setPersistentViewCard3(true);
     if (viewContacts) setPersistentViewContacts(true);
-  }, [viewCard1, viewCard2, viewCard3 , viewContacts]);
+  }, [viewCard1, viewCard2, viewCard3, viewContacts]);
 
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
@@ -113,7 +109,6 @@ export default function Home() {
     document.body.classList.remove("overflow-hidden");
   }, []);
 
-
   const handleModalContacts = useCallback(() => {
     setOpenModalContacts((prev) => !prev);
   }, []);
@@ -127,29 +122,30 @@ export default function Home() {
       <Modal
         open={openModal}
         close={handleModalClose}
+        videoSrc="https://www.youtube.com/watch?v=0WtnBiiVF80"
         imageSrc="/FeatureDesign_pt.png"
         linkApp={"https://play.google.com/store/apps/details?id=com.rlpsicologia.levelup&hl=en&gl=US"}
         title="Level-up"
         subtitle={text[language].modal}
-        linktext={text[language].modalLink} 
+        linktext={text[language].modalLink}
       />
-          <Modal
+      <Modal
         open={openModal2}
         close={handleModalClose2}
         imageSrc="/personaldriveScreen.png"
         linkApp={"https://personal-drive-amber.vercel.app/"}
         title="Personal Drive"
         subtitle={text[language].modal2}
-        linktext={text[language].modal2Link} 
+        linktext={text[language].modal2Link}
       />
-              <Modal
+      <Modal
         open={openModal3}
         close={handleModalClose3}
         imageSrc="/frenteJSmodal.png"
         linkApp={"https://genaipt.github.io/frenteJS/"}
         title="FrenteJS"
         subtitle={text[language].modal3}
-        linktext={text[language].modal3Link} 
+        linktext={text[language].modal3Link}
       />
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
@@ -207,23 +203,22 @@ export default function Home() {
                       : "opacity-0 translate-y-20 md:translate-y-33"
                   }`}
                 >
-{/*                   <Card
+                  {/*                   <Card
                     imageSrc="/site.png"
                     title={text[language].card2title}
                     subtitle={text[language].card2sub}
                     iconArray={techPortfolio}
                   /> */}
-                         <Card
+                  <Card
                     imageSrc="/FrenteJS.png"
                     title={text[language].card4title}
                     subtitle={text[language].card4sub}
                     iconArray={techFrenteJS}
                     openModal={handleModalOpen3}
                   />
-            
                 </div>
 
-               {/*  AQUIIII */}
+                {/*  AQUIIII */}
                 <div
                   ref={refCard2}
                   className={`${
@@ -232,14 +227,13 @@ export default function Home() {
                       : "opacity-0 translate-x-32 md:translate-x-60"
                   }`}
                 >
-                    <Card
+                  <Card
                     imageSrc="/personalDrive.png"
                     title={text[language].card3title}
                     subtitle={text[language].card3sub}
                     iconArray={personalDrive}
                     openModal={handleModalOpen2}
                   />
-        
                 </div>
               </div>
             </div>

@@ -1,18 +1,20 @@
 import Link from "next/link";
 import text from "@/data/text.json";
 import { language } from "@/utils/language";
+import VideoPlayer from "./videoPlayer/VideoPlayer";
 
 type Props = {
   open: boolean;
   close: () => void;
-  imageSrc: string;
+  imageSrc?: string;
+  videoSrc?: string;
   title: string;
   subtitle: string;
   linkApp: string;
   linktext: string;
 };
 
-function Modal({ open, close, title, imageSrc, subtitle, linkApp, linktext }: Props) {
+function Modal({ open, close, title, imageSrc, videoSrc, subtitle, linkApp, linktext }: Props) {
   if (!open) return null;
 
   return (
@@ -39,7 +41,11 @@ function Modal({ open, close, title, imageSrc, subtitle, linkApp, linktext }: Pr
             </button>
           </div>
           <div className="flex flex-2  ">
-            <img src={imageSrc} alt={title} className="inline-block w-72 md:w-80 gap-2 rounded-tl-xl" />
+            {videoSrc ? (
+              <VideoPlayer videoSrc={videoSrc} imageSrc={imageSrc as string} />
+            ) : (
+              <img src={imageSrc} alt={title} className="inline-block w-72 md:w-80 gap-2 rounded-tl-xl" />
+            )}
           </div>
           <div className="  py-0 flex flex-col w-full h-full justify-start items-start self-start  flex-1">
             <div className=" w-full bg-slate-200 justify-end hidden md:flex">
@@ -64,7 +70,7 @@ function Modal({ open, close, title, imageSrc, subtitle, linkApp, linktext }: Pr
                 href={linkApp}
                 target="_blank"
               >
-              {linktext}
+                {linktext}
               </Link>
             </div>
           </div>
