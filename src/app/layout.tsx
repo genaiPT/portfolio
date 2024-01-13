@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <title>Ricardo Linhares Front-end Developer</title>
+        <title>Ricardo Linhares Developer</title>
         <meta name="description" content="Personal portfolio website for showcasing development work." />
       </head>
       <body className={inter.className}>
