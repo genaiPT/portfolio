@@ -44,6 +44,11 @@ export default function Home() {
     { name: "TypeScript", icon: "/ts.png" },
   ];
 
+  const techFrenteJS: NameLink[] = [
+
+    { name: "TypeScript", icon: "/ts.png" },
+  ];
+
   const exLinks: NameLink2[] = [
     { name: "GitHub", icon: "/github.png", link: "https://github.com/genaiPT" },
     { name: "LinkedIn", icon: "/li.png", link: "https://www.linkedin.com/in/ricardolinharespsicologo/?locale=en_US" },
@@ -55,21 +60,27 @@ export default function Home() {
   const { ref: refCard2, inView: viewCard2 } = useInView({
     threshold: 0.2,
   });
+  const { ref: refCard3, inView: viewCard3 } = useInView({
+    threshold: 0.2,
+  });
   const { ref: refContactos, inView: viewContacts } = useInView({
     threshold: 0.3,
   });
   const [persistentViewCard1, setPersistentViewCard1] = useState(false);
   const [persistentViewCard2, setPersistentViewCard2] = useState(false);
+  const [persistentViewCard3, setPersistentViewCard3] = useState(false);
   const [persistentViewContacts, setPersistentViewContacts] = useState(false);
 
   useEffect(() => {
     if (viewCard1) setPersistentViewCard1(true);
     if (viewCard2) setPersistentViewCard2(true);
+    if (viewCard3) setPersistentViewCard3(true);
     if (viewContacts) setPersistentViewContacts(true);
-  }, [viewCard1, viewCard2, viewContacts]);
+  }, [viewCard1, viewCard2, viewCard3 , viewContacts]);
 
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
+  const [openModal3, setOpenModal3] = useState(false);
   const [openModalContacts, setOpenModalContacts] = useState(false);
 
   const handleModalOpen = useCallback(() => {
@@ -91,6 +102,17 @@ export default function Home() {
     setOpenModal2(false);
     document.body.classList.remove("overflow-hidden");
   }, []);
+
+  const handleModalOpen3 = useCallback(() => {
+    setOpenModal3(true);
+    document.body.classList.add("overflow-hidden");
+  }, []);
+
+  const handleModalClose3 = useCallback(() => {
+    setOpenModal3(false);
+    document.body.classList.remove("overflow-hidden");
+  }, []);
+
 
   const handleModalContacts = useCallback(() => {
     setOpenModalContacts((prev) => !prev);
@@ -119,6 +141,15 @@ export default function Home() {
         title="Personal Drive"
         subtitle={text[language].modal2}
         linktext={text[language].modal2Link} 
+      />
+              <Modal
+        open={openModal3}
+        close={handleModalClose3}
+        imageSrc="/frenteJSmodal.png"
+        linkApp={"https://genaipt.github.io/frenteJS/"}
+        title="FrenteJS"
+        subtitle={text[language].modal3}
+        linktext={text[language].modal3Link} 
       />
       <ModalContacts open={openModalContacts} handleModal={handleModalContacts} />
       <div className="overflow-hidden overflow-x-hidden ">
@@ -169,11 +200,11 @@ export default function Home() {
                   />
                 </div>
                 <div
-                  ref={refCard2}
+                  ref={refCard3}
                   className={`${
-                    persistentViewCard2
-                      ? "opacity-100 ease-in duration-300 translate-x-0 md:delay-300 "
-                      : "opacity-0 translate-x-32 md:translate-x-60"
+                    persistentViewCard3
+                      ? "opacity-100 ease-in duration-300 translate-y-0 md:delay-300 "
+                      : "opacity-0 translate-y-20 md:translate-y-33"
                   }`}
                 >
 {/*                   <Card
@@ -182,13 +213,33 @@ export default function Home() {
                     subtitle={text[language].card2sub}
                     iconArray={techPortfolio}
                   /> */}
-                     <Card
+                         <Card
+                    imageSrc="/FrenteJS.png"
+                    title={text[language].card4title}
+                    subtitle={text[language].card4sub}
+                    iconArray={techFrenteJS}
+                    openModal={handleModalOpen3}
+                  />
+            
+                </div>
+
+               {/*  AQUIIII */}
+                <div
+                  ref={refCard2}
+                  className={`${
+                    persistentViewCard2
+                      ? "opacity-100 ease-in duration-300 translate-x-0 "
+                      : "opacity-0 translate-x-32 md:translate-x-60"
+                  }`}
+                >
+                    <Card
                     imageSrc="/personalDrive.png"
                     title={text[language].card3title}
                     subtitle={text[language].card3sub}
                     iconArray={personalDrive}
                     openModal={handleModalOpen2}
                   />
+        
                 </div>
               </div>
             </div>

@@ -35,12 +35,17 @@
     "card2sub": "The goal was to quickly build something to serve as a portfolio and to use other technologies I have been learning.",
     "card3title": "A personal drive app",
     "card3sub": "A home web server similar to Google Drive. A easier and quicker way to acess personal files and share them with others.",
+    "card4title": "FrenteJS, a library",
+    "card4sub": "I wanted to be able to make little interactive apps, without the hassel of messing with bundles and configurations.",
     "footer": "Developed by Ricardo Linhares - 2023",
     "modal": "The goal of this app was to create a mental health improvement system that would track progress and engage users. A monetization method was also needed.<br/><br/> The application features an RPG-style Status system, achievement titles, inventory of acquired items, gratitude and meditation records, among other things. The app is freemium, using ads and a purchase option that provides access to exclusive features and ad removal.",
 
     "modalLink": "See it on GooglePlay",
     "modal2": "I made this app for personal use. I needed a way to acess my files in other institutions computers without login in to google.<br/>This app backend runs on a raspberry pi with node and express, and uses react with vite on the front. I ended up making acounts for my family to use as well, and a shared folder to make files available to all of us. You can acess it with the credentials 'loginGuest' and 'passwordGuest', although guests can't upload files.",
     "modal2Link":"Go to website",
+    "modal3": "This is a small library for writing component-based interactable SPAs using just JavaScript (or TS).<br/><br/>To use it, simply copy a js file from my github to your project. Alternatively, you can clone a TypeScript-Tailwind template, which includes some pre-made components and a presentation app. Check the link below for more details.",
+    "modal3Link":"Go to website",
+   
     "nav": {
       "sobre": "About me",
       "projectos": "Projects",
