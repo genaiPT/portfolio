@@ -23,7 +23,8 @@ function Modal({ open, close, title, imageSrc, videoSrc, subtitle, linkApp, link
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className=" fixed self-center mt-2 md:mt-0 md:top-1/3 flex flex-col  bg-slate-200 shadow-2xl rounded-xl max-w-lg md:max-w-6xl "
+        className=" fixed self-center mt-2 md:mt-0 md:top-1/3 flex flex-col  bg-slate-200 shadow-2xl rounded-xl max-w-lg md:max-w-6xl overflow-y-auto sm:overflow-auto
+        "
       >
         <div className="flex-col md:flex-row  flex-1 flex justify-center items-center  rounded-xl  ">
           <div className=" w-full bg-slate-200 justify-end flex md:hidden mt-2 md:mt-0 ">
@@ -40,9 +41,12 @@ function Modal({ open, close, title, imageSrc, videoSrc, subtitle, linkApp, link
               </svg>
             </button>
           </div>
-          <div className="flex flex-2  ">
+          <div className="flex  ">
             {videoSrc ? (
+     
+
               <VideoPlayer videoSrc={videoSrc} imageSrc={imageSrc as string} />
+      
             ) : (
               <img src={imageSrc} alt={title} className="inline-block w-72 md:w-80 gap-2 rounded-tl-xl" />
             )}

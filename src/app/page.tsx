@@ -199,8 +199,8 @@ export default function Home() {
                   ref={refCard3}
                   className={`${
                     persistentViewCard3
-                      ? "opacity-100 ease-in duration-300 translate-y-0 md:delay-300 "
-                      : "opacity-0 translate-y-20 md:translate-y-33"
+                      ? "opacity-100 ease-in duration-300 translate-y-0 md:delay-100 "
+                      : "opacity-0 translate-y-20 md:translate-y-27"
                   }`}
                 >
                   {/*                   <Card
